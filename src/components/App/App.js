@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import '../../index.scss';
 import { Home } from '../../pages/Home';
 import { Layout } from '../Layout';
 import { AboutUs } from '../../pages/AboutUs'
+import '../../index.scss';
 
 export function App() {
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../index.scss';
 import { Logo } from '../Logo'
+import '../../index.scss';
 
 
 export function PageHeader() {
