@@ -1,0 +1,29 @@
+@import './reset.css';
+
+$primaryColor: #BE64FF;
+$secondaryColor: #F4F4F4;
+
+:root {
+  font-family: "Arial Nova", sans-serif;
+}
+
+body {
+  margin: 0 auto;
+  background-color: $secondaryColor;
+}
+
+.largeTile {
+  background-color: $primaryColor;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: $secondaryColor;
+  margin: 5px
+}
+
+.smallTile {
+  background-color: $secondaryColor;
+  border-radius: 10px;
+  padding: 5px 10px;
+  color: $primaryColor;
+  margin: 5px
+}
