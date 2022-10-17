@@ -39,10 +39,39 @@ body {
   align-items: center;
   margin: 0 1rem 0 0;
 }
+//nav buttony zestramlinowane, stara klasa dla Logo nieaktualna
+//.Logo {
+//  text-decoration: none;
+//  max-height: 3vh;
+//  font-size: 1.5rem;
+//  align-content: center;
+//  transition: all 0.5s;
+//  &:hover {
+//    background-color: $secondaryColor;
+//    color: $primaryColor;
+//    cursor: pointer;
+//  }
+//}
 
-.Logo {
+.Menu__button {
   text-decoration: none;
-  max-height: 3vh;
+  transition: all 0.5s;
+  &:hover {
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    cursor: pointer;
+  }
+}
+
+
+.List {
+  display: flex;
+  flex-direction: column;
   font-size: 1.5rem;
   align-content: center;
+
+  &__link {
+    text-decoration: none;
+    font-size: 2rem;
+  }
 }
