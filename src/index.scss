@@ -20,7 +20,8 @@ body {
   margin: 5px;
   font-weight: 700;
   font-size: 2rem;
-  height: 90vh;
+  max-height: 90vh;
+  max-width: 400px;
 }
 
 .smallTile {
@@ -38,6 +39,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0 1rem 0 0;
+  max-width: 400px;
 }
 //nav buttony zestramlinowane, stara klasa dla Logo nieaktualna
 //.Logo {
@@ -74,4 +76,8 @@ body {
     text-decoration: none;
     font-size: 2rem;
   }
+}
+
+.AddList__button {
+
 }

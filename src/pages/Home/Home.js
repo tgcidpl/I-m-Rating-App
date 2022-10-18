@@ -1,30 +1,28 @@
-import React from "react";
+import React, {useState} from "react";
+import { Link } from 'react-router-dom';
+
 import '../../index.scss';
 
 export function Home() {
-    return (
-        <div className="largeTile">
-            Hello World
-            <ul>
-                <li className="smallTile">
-                    <span>Title</span>
-                    <div>**********</div>
-                    <a href="http://"></a>
-                    <div>image</div>
-                    <div>lnk</div>
-                    <div>img</div>
-                    <div>del</div>
-                </li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-                <li className="smallTile">Item</li>
-            </ul>
-        </div>
-    );
+       if (localStorage.length === 0) {
+         return  <Link className="List__link largeTile" to="/create">Create your first list!</Link>
+       }
+      return <div>data based on local storage</div>
 }
+
+// ponizej kod alternatywny ze statem
+// export function Home() {
+//     const [openForm, setOpenForm] = useState(false);
+//
+//
+//     return (
+//         <>
+//             {openForm
+//                 ? <div>formularz</div>
+//                 : <div>dane</div>
+//             }
+//             <button onClick={() => setOpenForm(!openForm)}>toggle form</button>
+//         </>
+//
+//     )
+// }

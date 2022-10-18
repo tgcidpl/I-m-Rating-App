@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import '../../index.scss';
 import { Link } from 'react-router-dom';
 
+//below drawer core was taken from mui, originally designed for 4 directions top left right bottom and .map for creating buttons
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
-
 
 export function Menu() {
     const [state, setState] = useState({
@@ -28,6 +29,7 @@ export function Menu() {
         >
             <List className="List">
                 <Link className="List__link smallTile Menu__button" to="/">Home</Link>
+                <Link className="List__link smallTile Menu__button" to="/create">Create New List</Link>
                 <Link className="List__link smallTile Menu__button" to="/aboutus">About Us</Link>
             </List>
         </Box>
