@@ -5,12 +5,15 @@ import { AddItem } from '../AddItem/'
 export function Print() {
 
     const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
+    const dataFromStorageKeys = dataFromStorage.map((el)=>Object.keys(el))
     console.log(dataFromStorage)
+    console.log(dataFromStorage[0])
+
     return (
         <div className="PrintArea">
             {dataFromStorage.map((item, i) => (
                 <div key={i} className="largeTile List">
-                    <h2 className="List-header">{item.listName}</h2>
+                    <h2 className="List-header">{dataFromStorageKeys[i]}</h2>
                     <ul className="List-items">
                         <li className="smallTile List-items-item">
                             <div className = "List-items-item-title">

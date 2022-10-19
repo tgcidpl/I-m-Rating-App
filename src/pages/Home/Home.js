@@ -5,7 +5,7 @@ import '../../index.scss';
 
 export function Home() {
        if (localStorage.length === 0) {
-         return  <Link className="List__link largeTile" to="/create">Create your first list!</Link>
+         return  <Link className="Menu-list__link largeTile" to="/create">Create your first list!</Link>
        }
       return <Print />
 }

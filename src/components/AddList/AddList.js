@@ -19,14 +19,13 @@ export function AddList() {
 
         const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || []
         const newList = {}
-        newList[listName] = {
+        newList[listName] = [{
             title: title,
             rating: rating,
             webLink: webLink,
             imgLink: imgLink
-        }
+        }]
         const dataToSave = [...dataFromStorage, newList]
-        console.log(dataToSave)
         localStorage.setItem('lists', JSON.stringify(dataToSave))
 
         //below testing code

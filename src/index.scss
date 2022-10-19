@@ -2,6 +2,7 @@
 
 $primaryColor: #BE64FF;
 $secondaryColor: #F4F4F4;
+$shadowColor: #6F4F9F;
 
 :root {
   font-family: "Arial Nova", sans-serif;
@@ -13,6 +14,7 @@ body {
 }
 
 .largeTile {
+  display: block;
   background-color: $primaryColor;
   border-radius: 10px;
   padding: 0.5rem;
@@ -22,6 +24,7 @@ body {
   font-size: 2rem;
   max-height: 90vh;
   max-width: 400px;
+  box-shadow: 5px 5px 5px $shadowColor;
 }
 
 .smallTile {
@@ -34,12 +37,16 @@ body {
   font-size: 1.5rem;
 }
 
+.Logo {
+  font-size: 1.5rem;
+}
 .PageHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0 1rem 0 0;
   max-width: 100vw;
+  height: 10vh;
 }
 
 .Menu__button {
