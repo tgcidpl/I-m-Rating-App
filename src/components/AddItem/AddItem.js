@@ -8,6 +8,7 @@ export function AddItem() {
     const [webLink, setWebLink] = useState('')
     const [imgLink, setImgLink] = useState('')
 
+
     const handleSubmit = (e) => {
         e.preventDefault()
 
@@ -23,6 +24,7 @@ export function AddItem() {
         const dataToSave = [...dataFromStorage, newItem]
         console.log(dataToSave)
         localStorage.setItem('lists', JSON.stringify(dataToSave))
+        location.reload()
     }
 
     const [active, setActive] = useState(false)

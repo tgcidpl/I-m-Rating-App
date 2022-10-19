@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { AddItem } from '../AddItem/'
+
 export function Print() {
 
     const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
@@ -18,7 +19,9 @@ export function Print() {
                         <li className="smallTile List-items-item">
                             <div className = "List-items-item-title">
                                 <h3 className="List-items-item-title__header">{item.title}</h3>
-                                <Button className="List-items-item-title__edit" variant="text">EDIT</Button>
+                                <Button
+                                    sx={{color: '#BE64FF'}}
+                                    className="List-items-item-title__edit" variant="text">EDIT</Button>
                             </div>
                             <div className="List-items-item__rating">{item.rating}</div>
                             <a href={item.webLink} className="List-items-item__webLink">Link!</a>

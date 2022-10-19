@@ -113,3 +113,9 @@ body {
     }
   }
 }
+
+//MUI overrides below
+
+.MuiButtonBase {
+  color: $primaryColor;
+}
