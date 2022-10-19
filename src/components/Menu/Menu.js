@@ -27,10 +27,10 @@ export function Menu() {
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
-            <List className="List">
-                <Link className="List__link smallTile Menu__button" to="/">Home</Link>
-                <Link className="List__link smallTile Menu__button" to="/create">Create New List</Link>
-                <Link className="List__link smallTile Menu__button" to="/aboutus">About Us</Link>
+            <List className="Menu-list">
+                <Link className="Menu-list__link smallTile Menu__button" to="/">Home</Link>
+                <Link className="Menu-list__link smallTile Menu__button" to="/create">Create New List</Link>
+                <Link className="Menu-list__link smallTile Menu__button" to="/aboutus">About Us</Link>
             </List>
         </Box>
     );

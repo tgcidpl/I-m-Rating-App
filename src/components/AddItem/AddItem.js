@@ -1,34 +1,16 @@
-import React, {useState} from "react";
-import {useNavigate} from 'react-router-dom'
+import React, {useState} from 'react';
 import '../../index.scss';
 
-
-export function AddList() {
+export function AddItem() {
     const [listName, setListName] = useState('')
     const [title, setTitle] = useState('')
     const [rating, setRating] = useState(10)
     const [webLink, setWebLink] = useState('')
     const [imgLink, setImgLink] = useState('')
 
-    const navigate = useNavigate()
-
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        //below new code
-
-        // const newList = JSON.parse(localStorage.getItem(`lists`)) || []
-        // const newItem = {
-        //     listName: listName,
-        //     title: title,
-        //     rating: rating,
-        //     webLink: webLink,
-        //     imgLink: imgLink
-        // }
-        // newList.push(newItem)
-        // localStorage.setItem(`lists`, JSON.stringify(newList));
-
-        //below faulty code
         const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
         const newItem = {
             listName: listName,
@@ -41,34 +23,26 @@ export function AddList() {
         const dataToSave = [...dataFromStorage, newItem]
         console.log(dataToSave)
         localStorage.setItem('lists', JSON.stringify(dataToSave))
-        navigate('/')
-        //below original code
+    }
 
-        // const newList = JSON.parse(localStorage.getItem(`${listName}`)) || []
-        // const newItem = {
-        //     title: title,
-        //     rating: rating,
-        //     webLink: webLink,
-        //     imgLink: imgLink
-        // }
-        // newList.push(newItem)
-        // localStorage.setItem(`${listName}`, JSON.stringify(newList));
+    const [active, setActive] = useState(false)
+
+    function handleClickSwitchActive() {
+        setActive(current => !current)
     }
 
     return (
         <div>
-            <h2 className="smallTile">Add your new list with its first entry!</h2>
-            <form>
-                <div className="largeTile">
-                    <label>List name: </label>
-                    <input
-                        className="smallTile"
-                        type="text"
-                        required
-                        value={listName}
-                        onChange={(e) => {
-                            setListName(e.target.value);
-                        }}/>
+            <button className="smallTile"
+                    style={{
+                        display: !active ? 'block' : 'none'
+                    }}
+                onClick={handleClickSwitchActive}>Add Item!</button>
+            <form  className="AddItem"
+                   style={{
+                display: active ? 'block' : 'none'
+            }}>
+                <div>
                     <ul>
                         <li className="smallTile">
                             <label>Title</label>
@@ -98,17 +72,21 @@ export function AddList() {
                                 onChange={(e) => {
                                     setImgLink(e.target.value);
                                 }}/>
-                            <button
-                                className="List__link largeTile"
-                                type="submit"
-                                onClick={handleSubmit}>
-                                SUBMIT
-                            </button>
                         </li>
                     </ul>
+                    <button
+                        className="List__link largeTile"
+                        type="submit"
+                        onClick={handleSubmit}>
+                        Add
+                    </button>
+                    <button className="smallTile"
+                            style={{
+                                display: active ? 'block' : 'none'
+                            }}
+                            onClick={handleClickSwitchActive}>Hide</button>
                 </div>
             </form>
         </div>
     )
 }
-
