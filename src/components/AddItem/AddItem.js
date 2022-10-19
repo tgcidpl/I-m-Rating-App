@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
+import Rating from '@mui/material/Rating';
 import '../../index.scss';
 
 export function AddItem() {
     const [listName, setListName] = useState('')
     const [title, setTitle] = useState('')
-    const [rating, setRating] = useState(10)
+    const [rating, setRating] = useState(5)
     const [webLink, setWebLink] = useState('')
     const [imgLink, setImgLink] = useState('')
 
@@ -57,7 +58,12 @@ export function AddItem() {
                                     setTitle(e.target.value);
                                 }}/>
                             <label>Your Initial Rating</label>
-                            <div>**********</div>
+                            <div>
+                                <Rating value={rating}
+                                        onChange={(event, newValue) => {
+                                            setRating(newValue)}}
+                                        max={10}/>
+                            </div>
                             <label>External Webpage Link</label>
                             <input
                                 className="smallTile"
