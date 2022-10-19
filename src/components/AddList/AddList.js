@@ -17,7 +17,21 @@ export function AddList() {
 
         //below new code
 
-        // const newList = JSON.parse(localStorage.getItem(`lists`)) || []
+        const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || []
+        const newList = {}
+        newList[listName] = {
+            title: title,
+            rating: rating,
+            webLink: webLink,
+            imgLink: imgLink
+        }
+        const dataToSave = [...dataFromStorage, newList]
+        console.log(dataToSave)
+        localStorage.setItem('lists', JSON.stringify(dataToSave))
+
+        //below testing code
+
+        // const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
         // const newItem = {
         //     listName: listName,
         //     title: title,
@@ -25,23 +39,11 @@ export function AddList() {
         //     webLink: webLink,
         //     imgLink: imgLink
         // }
-        // newList.push(newItem)
-        // localStorage.setItem(`lists`, JSON.stringify(newList));
+        //
+        // const dataToSave = [...dataFromStorage, newItem]
+        // console.log(dataToSave)
+        // localStorage.setItem('lists', JSON.stringify(dataToSave))
 
-        //below faulty code
-        const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
-        const newItem = {
-            listName: listName,
-            title: title,
-            rating: rating,
-            webLink: webLink,
-            imgLink: imgLink
-        }
-
-        const dataToSave = [...dataFromStorage, newItem]
-        console.log(dataToSave)
-        localStorage.setItem('lists', JSON.stringify(dataToSave))
-        navigate('/')
         //below original code
 
         // const newList = JSON.parse(localStorage.getItem(`${listName}`)) || []
@@ -53,6 +55,9 @@ export function AddList() {
         // }
         // newList.push(newItem)
         // localStorage.setItem(`${listName}`, JSON.stringify(newList));
+
+        navigate('/')
+
     }
 
     return (

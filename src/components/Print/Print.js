@@ -5,7 +5,7 @@ import { AddItem } from '../AddItem/'
 export function Print() {
 
     const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
-
+    console.log(dataFromStorage)
     return (
         <div className="PrintArea">
             {dataFromStorage.map((item, i) => (
