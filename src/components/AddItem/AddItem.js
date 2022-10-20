@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Rating from '@mui/material/Rating';
 import '../../index.scss';
 
-export function AddItem() {
+export function AddItem(props) {
     const [listName, setListName] = useState('')
     const [title, setTitle] = useState('')
     const [rating, setRating] = useState(5)
@@ -13,9 +13,9 @@ export function AddItem() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
+        const dataFromStorage = JSON.parse(localStorage.getItem(props.listName)) || []
         const newItem = {
-            listName: listName,
+            listName: props.listName,
             title: title,
             rating: rating,
             webLink: webLink,
@@ -24,7 +24,7 @@ export function AddItem() {
 
         const dataToSave = [...dataFromStorage, newItem]
         console.log(dataToSave)
-        localStorage.setItem('lists', JSON.stringify(dataToSave))
+        localStorage.setItem(props.listName, JSON.stringify(dataToSave))
         location.reload()
     }
 
