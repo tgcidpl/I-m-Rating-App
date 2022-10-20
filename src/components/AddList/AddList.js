@@ -15,18 +15,18 @@ export function AddList() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        //below new code
+        //below code creating one lists LS array with multiple named arrays METHOD B
 
-        const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || []
-        const newList = {}
-        newList[listName] = [{
-            title: title,
-            rating: rating,
-            webLink: webLink,
-            imgLink: imgLink
-        }]
-        const dataToSave = [...dataFromStorage, newList]
-        localStorage.setItem('lists', JSON.stringify(dataToSave))
+        // const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || []
+        // const newList = {}
+        // newList[listName] = [{
+        //     title: title,
+        //     rating: rating,
+        //     webLink: webLink,
+        //     imgLink: imgLink
+        // }]
+        // const dataToSave = [...dataFromStorage, newList]
+        // localStorage.setItem('lists', JSON.stringify(dataToSave))
 
         //below testing code
 
@@ -43,17 +43,17 @@ export function AddList() {
         // console.log(dataToSave)
         // localStorage.setItem('lists', JSON.stringify(dataToSave))
 
-        //below original code
+        //below original code interpolating list names as Keys METHOD A
 
-        // const newList = JSON.parse(localStorage.getItem(`${listName}`)) || []
-        // const newItem = {
-        //     title: title,
-        //     rating: rating,
-        //     webLink: webLink,
-        //     imgLink: imgLink
-        // }
-        // newList.push(newItem)
-        // localStorage.setItem(`${listName}`, JSON.stringify(newList));
+        const newList = JSON.parse(localStorage.getItem(`${listName}`)) || []
+        const newItem = {
+            title: title,
+            rating: rating,
+            webLink: webLink,
+            imgLink: imgLink
+        }
+        newList.push(newItem)
+        localStorage.setItem(`${listName}`, JSON.stringify(newList));
 
         navigate('/')
 
