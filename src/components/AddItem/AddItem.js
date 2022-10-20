@@ -2,6 +2,8 @@ import React, {useState} from 'react';
 import Rating from '@mui/material/Rating';
 import '../../index.scss';
 
+//BELOW CODE BASED ON AddList modified for adding items to existing lists
+
 export function AddItem(props) {
     const [listName, setListName] = useState('')
     const [title, setTitle] = useState('')
@@ -15,7 +17,7 @@ export function AddItem(props) {
 
         const dataFromStorage = JSON.parse(localStorage.getItem(props.listName)) || []
         const newItem = {
-            listName: props.listName,
+            // listName: props.listName,
             title: title,
             rating: rating,
             webLink: webLink,

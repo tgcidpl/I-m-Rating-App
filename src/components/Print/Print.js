@@ -7,7 +7,7 @@ import Rating from '@mui/material/Rating';
 export function Print() {
 
 const formattedDataFromLocalStorage = [];
-const formattedDatav2 = [];
+const formattedDataV2 = [];
         for (let i=0; i<localStorage.length; i++){
             const key = localStorage.key(i)
             const list = JSON.parse(localStorage.getItem(key))
@@ -15,15 +15,19 @@ const formattedDatav2 = [];
             const newList = list[0];
             newList['listName'] = key
             formattedDataFromLocalStorage.push(newList);
-            formattedDatav2.push(list);
-        }
-        console.log('v1',formattedDataFromLocalStorage)
-    console.log('v2',formattedDatav2)
 
+            formattedDataV2.push(list);
+        }
+        console.log('localStorage', localStorage)
+        console.log('v1',formattedDataFromLocalStorage)
+    console.log('v2',formattedDataV2)
+
+    //CONTINUE WORKING BELOW WITH MAPPING AND ABOVE WITH GETTING DATA FROM LOCAL STORAGE
+    //need to properly parse data from LS and print it with Object.entries(formattedData).map
     return (
         <div className="PrintArea">
 
-            {formattedDataFromLocalStorage.map((item, idx) => (
+            { formattedDataFromLocalStorage.map((item, idx) => (
                 <div key={idx} className="largeTile List">
                     <h2 className="List-header">{item.listName}</h2>
                     <ul className="List-items">
