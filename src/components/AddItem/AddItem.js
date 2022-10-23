@@ -8,6 +8,7 @@ export function AddItem(props) {
     const [listName, setListName] = useState('')
     const [title, setTitle] = useState('')
     const [rating, setRating] = useState(5)
+    const [author, setAuthor] = useState('')
     const [webLink, setWebLink] = useState('')
     const [imgLink, setImgLink] = useState('')
 
@@ -18,10 +19,11 @@ export function AddItem(props) {
         const dataFromStorage = JSON.parse(localStorage.getItem(props.listName)) || []
         const newItem = {
             // listName: props.listName,
-            title: title,
-            rating: rating,
-            webLink: webLink,
-            imgLink: imgLink
+            title,
+            rating,
+            author,
+            webLink,
+            imgLink
         }
 
         const dataToSave = [...dataFromStorage, newItem]
@@ -66,6 +68,14 @@ export function AddItem(props) {
                                             setRating(newValue)}}
                                         max={10}/>
                             </div>
+                            <label>Author</label>
+                            <input
+                                className="smallTile"
+                                type="text"
+                                value={author}
+                                onChange={(e) => {
+                                    setAuthor(e.target.value);
+                                }}/>
                             <label>External Webpage Link</label>
                             <input
                                 className="smallTile"

@@ -7,6 +7,7 @@ export function AddList() {
     const [listName, setListName] = useState('')
     const [title, setTitle] = useState('')
     const [rating, setRating] = useState(5)
+    const [author, setAuthor] = useState('')
     const [webLink, setWebLink] = useState('')
     const [imgLink, setImgLink] = useState('')
 
@@ -15,17 +16,22 @@ export function AddList() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        //below code creating one lists LS array with multiple named arrays METHOD B
+        //below working code with Object.enttries printing. Issue was [] instead of {} as base dataFromStorage
+        //below now works with Object.assign instead of deconstruction of []
 
-        const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || []
+        const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || {}
         const newList = {}
         newList[listName] = [{
             title,
             rating,
+            author,
             webLink,
             imgLink
         }]
-        const dataToSaveToLocalStorage = [...dataFromStorage, newList]
+
+        const dataToSaveToLocalStorage  = Object.assign(dataFromStorage, newList)
+        console.log('newList:', newList)
+        console.log('dataToSaveToLocalStorage', dataToSaveToLocalStorage)
         localStorage.setItem('lists', JSON.stringify(dataToSaveToLocalStorage))
 
         //below testing code
@@ -91,6 +97,14 @@ export function AddList() {
                                         setRating(newValue)}}
                                         max={10}/>
                             </div>
+                            <label>Author</label>
+                            <input
+                                className="smallTile"
+                                type="text"
+                                value={author}
+                                onChange={(e) => {
+                                    setAuthor(e.target.value);
+                                }}/>
                                 <label>External Webpage Link</label>
                             <input
                                 className="smallTile"

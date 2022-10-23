@@ -6,28 +6,45 @@ import Rating from '@mui/material/Rating';
 
 export function Print() {
 
-
     const myStructure = {
         "music": [
             {
                 title: 'Xabc',
+                rating: 8,
+                webLink: "www",
+                imgLink: "www"
             },
             {
                 title: 'Xabc2',
+                rating: 8,
+                webLink: "www",
+                imgLink: "www"
             },
             {
                 title: 'Xab3',
+                rating: 8,
+                webLink: "www",
+                imgLink: "www"
             }
         ],
         "tv_shows": [
             {
                 title: 'Yxyz',
+                rating: 8,
+                webLink: "www",
+                imgLink: "www"
             },
             {
                 title: 'Yxyz2',
+                rating: 8,
+                webLink: "www",
+                imgLink: "www"
             },
             {
                 title: 'Yxyz3',
+                rating: 8,
+                webLink: "www",
+                imgLink: "www"
             }
         ]
     }
@@ -56,22 +73,21 @@ export function Print() {
 
     console.log(dataFromStorageToPrint)
     console.log(myStructure)
-    //CONTINUE WORKING BELOW WITH MAPPING AND ABOVE WITH GETTING DATA FROM LOCAL STORAGE
-    //need to properly parse data from LS and print it with Object.entries(formattedData).map
+    //Object.entries working good, issue was in AddList
 
 
     return (
         <div className="PrintArea">
 
             {
-                Object.entries(dataFromStorageToPrint).map(list => {
+                Object.entries(dataFromStorageToPrint).map((list, idx) => {
                     return (
-                        <div className="largeTile List">
+                        <div key={idx} className="largeTile List">
                             <h2 className="List-header">{list[0]}</h2>
                             <ul className="List-items">
-                                {list[1].map(item => {
+                                {list[1].map((item, idx) => {
                                     return (
-                                        <li className="smallTile List-items-item">
+                                        <li key={idx} className="smallTile List-items-item">
                                             <div className="List-items-item-title">
                                                 <h3 className="List-items-item-title__header">{item.title}</h3>
                                                 <Button
@@ -81,6 +97,7 @@ export function Print() {
                                             <div className="List-items-item__rating">
                                                 <Rating value={item.rating} max={10}/>
                                             </div>
+                                            <p className="List-items-item__webLink">{item.author}</p>
                                             <a href={item.webLink} className="List-items-item__webLink">Link!</a>
                                             <div><img className="List-items-item__imgLink" src={item.imgLink} alt=""/>
                                             </div>
