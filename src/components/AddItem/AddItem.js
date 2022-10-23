@@ -11,6 +11,7 @@ export function AddItem(props) {
     const [author, setAuthor] = useState('')
     const [webLink, setWebLink] = useState('')
     const [imgLink, setImgLink] = useState('')
+    const [active, setActive] = useState(false)
 
 
     const handleSubmit = (e) => {
@@ -34,29 +35,30 @@ export function AddItem(props) {
         location.reload()
     }
 
-    const [active, setActive] = useState(false)
 
     function handleClickSwitchActive() {
-        setActive(current => !current)
+        setActive(!active)
     }
+
+    // JAK STARCZY CZASU TO TRZEBA ZROBIC PORZADEK Z KLASAMI smallTile i button osobno
 
     return (
         <div>
-            <button className="smallTile"
+            <button className={`btn smallTile ${active ? 'active' : 'inactive'}`}
                     style={{
-                        display: !active ? 'block' : 'none'
+                        display: !active ? 'block' : 'none',
                     }}
                 onClick={handleClickSwitchActive}>Add Item!</button>
             <form  className="AddItem"
                    style={{
-                display: active ? 'block' : 'none'
+                display: active ? 'block' : 'none',
             }}>
                 <div>
                     <ul>
                         <li className="smallTile">
                             <label>Title</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="text"
                                 required
                                 value={title}
@@ -72,7 +74,7 @@ export function AddItem(props) {
                             </div>
                             <label>Author</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="text"
                                 value={author}
                                 onChange={(e) => {
@@ -80,7 +82,7 @@ export function AddItem(props) {
                                 }}/>
                             <label>External Webpage Link</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="link"
                                 value={webLink}
                                 onChange={(e) => {
@@ -88,7 +90,7 @@ export function AddItem(props) {
                                 }}/>
                             <label>Image Link</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="link"
                                 value={imgLink}
                                 onChange={(e) => {
@@ -97,12 +99,12 @@ export function AddItem(props) {
                         </li>
                     </ul>
                     <button
-                        className="List__link largeTile"
+                        className="List__link btn largeTile"
                         type="submit"
                         onClick={handleSubmit}>
                         Add
                     </button>
-                    <button className="smallTile"
+                    <button className="btn smallTile"
                             style={{
                                 display: active ? 'block' : 'none'
                             }}

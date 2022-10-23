@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { AddItem } from '../AddItem/'
@@ -73,6 +73,15 @@ export function Print() {
 
     //Object.entries working good, issue was in AddList
 
+    const [active, setActive] = useState(false)
+    function handleClickSwitchActive() {
+        setActive(!active)
+    }
+
+    function handleClickDelete() {
+        console.log('delete')
+    }
+
     return (
         <div className="PrintArea">
 
@@ -84,12 +93,15 @@ export function Print() {
                             <ul className="List-items">
                                 {list[1].map((item, idx) => {
                                     return (
-                                        <li key={idx} className="smallTile List-items-item">
+                                        <li key={idx}
+                                            className={`smallTile List-items-item ${active ? 'active' : 'inactive'}`}>
                                             <div className="List-items-item-title">
                                                 <h3 className="List-items-item-title__header">{item.title}</h3>
                                                 <Button
                                                     sx={{color: '#BE64FF'}}
-                                                    className="List-items-item-title__edit" variant="text">EDIT</Button>
+                                                    className="List-items-item-title__edit"
+                                                    onClick={handleClickSwitchActive}
+                                                    variant="text">EDIT</Button>
                                             </div>
                                             <div className="List-items-item__rating">
                                                 <Rating value={item.rating} max={10}/>
@@ -98,7 +110,7 @@ export function Print() {
                                             <a href={item.webLink} className="List-items-item__webLink">Link!</a>
                                             <div><img className="List-items-item__imgLink" src={item.imgLink} alt=""/>
                                             </div>
-                                            <DeleteIcon/>
+                                            <DeleteIcon onClick={handleClickDelete}/>
                                         </li>
                                     )
                                 })

@@ -81,7 +81,7 @@ export function AddList() {
                         <li className="smallTile">
                             <label>Title</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="text"
                                 required
                                 value={title}
@@ -97,7 +97,7 @@ export function AddList() {
                             </div>
                             <label>Author</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="text"
                                 value={author}
                                 onChange={(e) => {
@@ -105,7 +105,7 @@ export function AddList() {
                                 }}/>
                                 <label>External Webpage Link</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="link"
                                 value={webLink}
                                 onChange={(e) => {
@@ -113,17 +113,17 @@ export function AddList() {
                                 }}/>
                             <label>Image Link</label>
                             <input
-                                className="smallTile"
+                                className="smallTile textField"
                                 type="link"
                                 value={imgLink}
                                 onChange={(e) => {
                                     setImgLink(e.target.value);
                                 }}/>
                             <button
-                                className="List__link largeTile"
+                                className="List__link btn largeTile"
                                 type="submit"
                                 onClick={handleSubmit}>
-                                SUBMIT
+                                Submit
                             </button>
                         </li>
                     </ul>
