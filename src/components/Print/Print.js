@@ -3,6 +3,7 @@ import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
 import { AddItem } from '../AddItem/'
 import Rating from '@mui/material/Rating';
+import {DeleteItem} from "../DeleteItem";
 
 export function Print() {
 
@@ -79,7 +80,10 @@ export function Print() {
     }
 
     function handleClickDelete() {
-        console.log('delete')
+        const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
+        console.log(dataFromStorageToPrint)
+
+    //CONTINUE HERE
     }
 
     return (
@@ -110,7 +114,7 @@ export function Print() {
                                             <a href={item.webLink} className="List-items-item__webLink">Link!</a>
                                             <div><img className="List-items-item__imgLink" src={item.imgLink} alt=""/>
                                             </div>
-                                            <DeleteIcon onClick={handleClickDelete}/>
+                                            <DeleteItem index={idx} title={item.title} listName={list[0]}/>
                                         </li>
                                     )
                                 })
