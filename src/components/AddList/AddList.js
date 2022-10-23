@@ -30,8 +30,6 @@ export function AddList() {
         }]
 
         const dataToSaveToLocalStorage  = Object.assign(dataFromStorage, newList)
-        console.log('newList:', newList)
-        console.log('dataToSaveToLocalStorage', dataToSaveToLocalStorage)
         localStorage.setItem('lists', JSON.stringify(dataToSaveToLocalStorage))
 
         //below testing code

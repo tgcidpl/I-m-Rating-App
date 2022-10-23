@@ -6,6 +6,7 @@ import Rating from '@mui/material/Rating';
 
 export function Print() {
 
+    //below list just for testing, structure provided by Marceli
     const myStructure = {
         "music": [
             {
@@ -70,11 +71,7 @@ export function Print() {
 
     const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
 
-
-    console.log(dataFromStorageToPrint)
-    console.log(myStructure)
     //Object.entries working good, issue was in AddList
-
 
     return (
         <div className="PrintArea">
@@ -107,7 +104,7 @@ export function Print() {
                                 })
                                 }
                             </ul>
-                            <AddItem listName={list.listName}/>
+                            <AddItem index={idx} listName={list[0]}/>
                         </div>
                     )
                 })

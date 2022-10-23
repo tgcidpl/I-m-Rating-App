@@ -16,9 +16,10 @@ export function AddItem(props) {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        const dataFromStorage = JSON.parse(localStorage.getItem(props.listName)) || []
+        const dataFromStorage = JSON.parse(localStorage.getItem("lists")) || {}
+        const listFromStorage = dataFromStorage[props.listName]
+
         const newItem = {
-            // listName: props.listName,
             title,
             rating,
             author,
@@ -26,9 +27,10 @@ export function AddItem(props) {
             imgLink
         }
 
-        const dataToSave = [...dataFromStorage, newItem]
-        console.log(dataToSave)
-        localStorage.setItem(props.listName, JSON.stringify(dataToSave))
+        listFromStorage.push(newItem)
+
+        localStorage.setItem('lists', JSON.stringify(dataFromStorage))
+
         location.reload()
     }
 
