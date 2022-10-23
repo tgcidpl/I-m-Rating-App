@@ -4,6 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { AddItem } from '../AddItem/'
 import Rating from '@mui/material/Rating';
 import {DeleteItem} from "../DeleteItem";
+import {DeleteList} from "../DeleteList";
 
 export function Print() {
 
@@ -79,13 +80,6 @@ export function Print() {
         setActive(!active)
     }
 
-    function handleClickDelete() {
-        const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
-        console.log(dataFromStorageToPrint)
-
-    //CONTINUE HERE
-    }
-
     return (
         <div className="PrintArea">
 
@@ -121,6 +115,8 @@ export function Print() {
                                 }
                             </ul>
                             <AddItem index={idx} listName={list[0]}/>
+                            <DeleteList
+                                index={idx} listName={list[0]}/>
                         </div>
                     )
                 })

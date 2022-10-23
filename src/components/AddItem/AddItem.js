@@ -5,7 +5,6 @@ import '../../index.scss';
 //BELOW CODE BASED ON AddList modified for adding items to existing lists
 
 export function AddItem(props) {
-    const [listName, setListName] = useState('')
     const [title, setTitle] = useState('')
     const [rating, setRating] = useState(5)
     const [author, setAuthor] = useState('')
@@ -48,11 +47,12 @@ export function AddItem(props) {
                     style={{
                         display: !active ? 'block' : 'none',
                     }}
-                onClick={handleClickSwitchActive}>Add Item!</button>
-            <form  className="AddItem"
-                   style={{
-                display: active ? 'block' : 'none',
-            }}>
+                    onClick={handleClickSwitchActive}>Add Item!
+            </button>
+            <form className="AddItem"
+                  style={{
+                      display: active ? 'block' : 'none',
+                  }}>
                 <div>
                     <ul>
                         <li className="smallTile">
@@ -69,7 +69,8 @@ export function AddItem(props) {
                             <div>
                                 <Rating value={rating}
                                         onChange={(event, newValue) => {
-                                            setRating(newValue)}}
+                                            setRating(newValue)
+                                        }}
                                         max={10}/>
                             </div>
                             <label>Author</label>
@@ -108,7 +109,8 @@ export function AddItem(props) {
                             style={{
                                 display: active ? 'block' : 'none'
                             }}
-                            onClick={handleClickSwitchActive}>Hide</button>
+                            onClick={handleClickSwitchActive}>Hide
+                    </button>
                 </div>
             </form>
         </div>
