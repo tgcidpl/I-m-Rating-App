@@ -9,9 +9,12 @@ export function DeleteItem(props) {
 
             const dataFromStorage = JSON.parse(localStorage.getItem("lists")) || {}
             const listFromStorage = dataFromStorage[props.listName]
+
             // filter below should splice be replaced
             // listFromStorage.filter(el=>el.title !== props.title)
+
             listFromStorage.splice(props.index, 1)
+            //deleteItem by index does not work if printing order is sorted
 
             localStorage.setItem('lists', JSON.stringify(dataFromStorage))
             location.reload()
@@ -19,6 +22,6 @@ export function DeleteItem(props) {
     }
 
     return (
-        <DeleteIcon onClick={handleClickDeleteItem}/>
+        <DeleteIcon className="btn" onClick={handleClickDeleteItem}/>
     )
 }

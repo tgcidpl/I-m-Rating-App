@@ -60,7 +60,6 @@ export function AddItem(props) {
                             <input
                                 className="smallTile textField"
                                 type="text"
-                                required
                                 value={title}
                                 onChange={(e) => {
                                     setTitle(e.target.value);

@@ -72,7 +72,6 @@ export function AddList() {
                     <input
                         className="smallTile"
                         type="text"
-                        required
                         value={listName}
                         onChange={(e) => {
                             setListName(e.target.value);

@@ -1,7 +1,7 @@
 @import './reset.css';
 
 $primaryColor: #BE64FF;
-$secondaryColor: #F4F4F4;
+$secondaryColor: #EEEEEE;
 $shadowColor: #6F4F9F;
 
 :root {
@@ -43,6 +43,13 @@ body {
 .btn {
   max-width:40vw;
   min-width: 20px;
+  cursor: pointer;
+  overflow: visible;
+
+  &:hover {
+    background-color: $primaryColor;
+    color: $secondaryColor;
+  }
 }
 .active{
 //  there was 60vh previously, works better without set data
@@ -56,6 +63,7 @@ body {
   font-size: 1.5rem;
   min-width: 20px;
   max-width: 40vw;
+  overflow: visible;
 }
 .PageHeader {
   display: flex;

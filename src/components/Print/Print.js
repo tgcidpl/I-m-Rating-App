@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
 import { AddItem } from '../AddItem/'
 import Rating from '@mui/material/Rating';
 import {DeleteItem} from "../DeleteItem";
@@ -89,10 +88,12 @@ export function Print() {
                         <div key={idx} className="largeTile List">
                             <h2 className="List-header">{list[0]}</h2>
                             <ul className="List-items">
+                                {/*if sorting option for printing then add .sort((a, b) => b.rating - a.rating) below*/}
                                 {list[1].map((item, idx) => {
                                     return (
                                         <li key={idx}
-                                            className={`smallTile List-items-item ${active ? 'active' : 'inactive'}`}>
+                                            className={`smallTile List-items-item ${active ? 'active' : 'inactive'}`}
+                                            style={{backgroundImage: `url(${item.imgLink})`}}>
                                             <div className="List-items-item-title">
                                                 <h3 className="List-items-item-title__header">{item.title}</h3>
                                                 <Button
