@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import Button from '@mui/material/Button';
-import { AddItem } from '../AddItem/'
+import {AddItem} from '../AddItem/'
 import Rating from '@mui/material/Rating';
 import {DeleteItem} from "../DeleteItem";
 import {DeleteList} from "../DeleteList";
@@ -12,9 +12,30 @@ export function Print() {
     //Object.entries working good, issue was in AddList ([] instead of {})
 
     const [active, setActive] = useState(false)
+
     function handleClickSwitchActive() {
         setActive(!active)
     }
+
+
+    function handleRatingChange(e, value) {
+        const dataFromStorage = JSON.parse(localStorage.getItem("lists")) || {}
+        // const listFromStorage = dataFromStorage[props.listName]
+        console.log(`dataFromStorage`, dataFromStorage)
+        console.log(e.target.value)
+        value = e.target.value
+        console.log(value)
+        Rating.value = value
+        console.log(Rating.value)
+        const title = e.target.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.innerText
+        console.log(title)
+        const listName = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.firstElementChild.innerText
+        console.log(listName)
+
+        // localStorage.setItem('lists', JSON.stringify(dataFromStorage))
+        // location.reload()
+    }
+
 
     return (
         <div className="PrintArea">
@@ -40,7 +61,11 @@ export function Print() {
                                                     variant="text">EDIT</Button>
                                             </div>
                                             <div className="List-items-item__rating">
-                                                <Rating value={item.rating} max={10}/>
+                                                <Rating
+                                                    // className={`${active ? '' : ``}`}
+                                                    value={item.rating} max={10} readOnly={!active}
+                                                    onChange={handleRatingChange}
+                                                />
                                             </div>
                                             <p className="List-items-item__webLink">{item.author}</p>
                                             <a href={item.webLink} className="List-items-item__webLink">Link!</a>
