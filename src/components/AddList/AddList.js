@@ -94,7 +94,7 @@ export function AddList() {
                                         setRating(newValue)}}
                                         max={10}/>
                             </div>
-                            <label>Author</label>
+                            <label>Author/ band/ creator</label>
                             <input
                                 className="smallTile textField"
                                 type="text"

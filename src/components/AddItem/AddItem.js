@@ -66,13 +66,13 @@ export function AddItem(props) {
                                 }}/>
                             <label>Your Initial Rating</label>
                             <div>
-                                <Rating value={rating}
+                                <Rating value={rating} size="large"
                                         onChange={(event, newValue) => {
                                             setRating(newValue)
                                         }}
                                         max={10}/>
                             </div>
-                            <label>Author, band, creator</label>
+                            <label>Author/ band/ creator</label>
                             <input
                                 className="smallTile textField"
                                 type="text"

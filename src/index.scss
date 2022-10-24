@@ -55,7 +55,7 @@ body {
   }
 }
 .active{
-//  there was 60vh previously, works better without set data
+  //  there was 60vh previously, works better without set data
 }
 .inactive{
   height: 9vh;
@@ -111,7 +111,8 @@ body {
 .List {
   width: 90vw;
   &-header {
-
+    font-size: 2.5rem;
+    text-shadow: $shadowColor 3px 3px 3px;
   }
 
   &-items {
