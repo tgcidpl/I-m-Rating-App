@@ -6,34 +6,21 @@ import {DeleteItem} from "../DeleteItem";
 import {DeleteList} from "../DeleteList";
 
 export function Print() {
-
     const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
-
-    //Object.entries working good, issue was in AddList ([] instead of {})
-
     const [active, setActive] = useState(false)
 
-    function handleClickSwitchActive() {
-        setActive(!active)
-    }
+    const handleClickSwitchActive = () => setActive(!active)
 
-
-    function handleRatingChange(e, value) {
+    function handleRatingChange(e) {
         const dataFromStorage = JSON.parse(localStorage.getItem("lists")) || {}
-        // const listFromStorage = dataFromStorage[props.listName]
-        console.log(`dataFromStorage`, dataFromStorage)
-        console.log(e.target.value)
-        value = e.target.value
-        console.log(value)
-        Rating.value = value
-        console.log(Rating.value)
         const title = e.target.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.innerText
-        console.log(title)
         const listName = e.target.parentNode.parentNode.parentNode.parentNode.parentNode.firstElementChild.innerText
-        console.log(listName)
-
-        // localStorage.setItem('lists', JSON.stringify(dataFromStorage))
-        // location.reload()
+        const listFromStorage = dataFromStorage[listName]
+        const objIndex = listFromStorage.findIndex((obj => obj.title === title));
+        listFromStorage[objIndex].rating = +e.target.value
+        listFromStorage.sort((a,b) => (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0))
+        localStorage.setItem('lists', JSON.stringify(dataFromStorage))
+        location.reload()
     }
 
 
@@ -62,7 +49,6 @@ export function Print() {
                                             </div>
                                             <div className="List-items-item__rating">
                                                 <Rating
-                                                    // className={`${active ? '' : ``}`}
                                                     value={item.rating} max={10} readOnly={!active}
                                                     onChange={handleRatingChange}
                                                 />
