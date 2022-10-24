@@ -7,72 +7,9 @@ import {DeleteList} from "../DeleteList";
 
 export function Print() {
 
-    //below list just for testing, structure provided by Marceli
-    const myStructure = {
-        "music": [
-            {
-                title: 'Xabc',
-                rating: 8,
-                webLink: "www",
-                imgLink: "www"
-            },
-            {
-                title: 'Xabc2',
-                rating: 8,
-                webLink: "www",
-                imgLink: "www"
-            },
-            {
-                title: 'Xab3',
-                rating: 8,
-                webLink: "www",
-                imgLink: "www"
-            }
-        ],
-        "tv_shows": [
-            {
-                title: 'Yxyz',
-                rating: 8,
-                webLink: "www",
-                imgLink: "www"
-            },
-            {
-                title: 'Yxyz2',
-                rating: 8,
-                webLink: "www",
-                imgLink: "www"
-            },
-            {
-                title: 'Yxyz3',
-                rating: 8,
-                webLink: "www",
-                imgLink: "www"
-            }
-        ]
-    }
-
-
-// const formattedDataFromLocalStorage = [];
-// const formattedDataV2 = [];
-//         for (let i=0; i<localStorage.length; i++){
-//             const key = localStorage.key(i)
-//             const list = JSON.parse(localStorage.getItem(key))
-//             //POSSIBLE FUTURE ISSUE BELOW WHEN ADDING ITEMS TO LIST!!!!!!!!!!!!!!!!
-//             const newList = list[0];
-//             newList['listName'] = key
-//             formattedDataFromLocalStorage.push(newList);
-//
-//             formattedDataV2.push(list);
-//         }
-//         console.log('localStorage', localStorage)
-//         console.log('v1',formattedDataFromLocalStorage)
-//     console.log('v2',formattedDataV2)
-
-    // code above is for previous attempts of printing before 22 Oct, below new printing based on Marceli's advice
-
     const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
 
-    //Object.entries working good, issue was in AddList
+    //Object.entries working good, issue was in AddList ([] instead of {})
 
     const [active, setActive] = useState(false)
     function handleClickSwitchActive() {

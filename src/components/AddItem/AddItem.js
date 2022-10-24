@@ -28,7 +28,7 @@ export function AddItem(props) {
         }
 
         listFromStorage.push(newItem)
-
+        listFromStorage.sort((a,b) => (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0))
         localStorage.setItem('lists', JSON.stringify(dataFromStorage))
 
         location.reload()
@@ -72,7 +72,7 @@ export function AddItem(props) {
                                         }}
                                         max={10}/>
                             </div>
-                            <label>Author</label>
+                            <label>Author, band, creator</label>
                             <input
                                 className="smallTile textField"
                                 type="text"
