@@ -15,7 +15,7 @@ export function AddList() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        //below working code with Object.enttries printing. Issue was [] instead of {} as base dataFromStorage
+        //below working code with Object.entries printing. Issue was [] instead of {} as base dataFromStorage
         //below now works with Object.assign instead of deconstruction of []
 
         const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || {}

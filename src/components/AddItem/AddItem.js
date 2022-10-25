@@ -107,7 +107,7 @@ export function AddItem(props) {
                             style={{
                                 display: active ? 'block' : 'none'
                             }}
-                            onClick={handleClickSwitchActive}>Hide
+                            onClick={handleClickSwitchActive}>Cancel
                     </button>
                 </div>
             </form>

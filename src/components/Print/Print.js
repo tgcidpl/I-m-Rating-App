@@ -25,9 +25,7 @@ export function Print() {
 
     return (
         <div className="PrintArea">
-
-            {
-                Object.entries(dataFromStorageToPrint).map((list, idx) => {
+            {Object.entries(dataFromStorageToPrint).map((list, idx) => {
                     return (
                         <div key={idx} className="largeTile List">
                             <h2 className="List-header">{list[0]}</h2>
