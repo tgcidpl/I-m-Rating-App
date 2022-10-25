@@ -54,6 +54,7 @@ body {
     color: $secondaryColor;
   }
 }
+
 .active{
   //  there was 60vh previously, works better without set data
 }
@@ -106,6 +107,7 @@ body {
 
 .PrintArea {
   display: flex;
+  overflow-x: scroll;
 }
 
 .List {
@@ -117,37 +119,65 @@ body {
 
   &-items {
     &-item {
+      background-position: initial;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-size: 2rem;
       padding: 0.5rem;
       &-title {
         display: flex;
         justify-content: space-between;
         &__header {
-          font-size: 2rem;
           margin-bottom: 0.5rem;
           font-weight: 700;
         }
       }
 
       &__rating {
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
       }
-
+      &__author {
+        padding: 0 0.5rem;
+        margin-bottom: 1rem;
+      }
       &__webLink {
+        padding: 0 0.5rem;
         text-decoration: none;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
         color: $primaryColor;
+        &:hover {
+          background-color: $primaryColor;
+          color: $secondaryColor;
+          border-radius: 5px;
+        }
+      }
+      &__footer{
+      display: flex;
+        justify-content: space-between;
+        &__img {
+          margin-top: 1rem;
+          max-width: 30vw;
+          max-height: 30vh;
+        }
       }
 
-      &__imgLink {
-        max-width: 30vw;
-        max-height: 30vh;
-      }
     }
+  }
+}
+
+.deleteBtn {
+  background-color: $secondaryColor;
+  border-radius: 5px;
+  align-self: flex-end;
+  &:hover {
+    background-color: $primaryColor;
+    color: $secondaryColor;
+    border-radius: 5px;
   }
 }
 
 //MUI overrides below
 
-.MuiButtonBase {
-  color: $primaryColor;
-}
+//.MuiButtonBase {
+//  color: $primaryColor;
+//}

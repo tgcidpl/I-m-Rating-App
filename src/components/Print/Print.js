@@ -42,9 +42,9 @@ export function Print() {
                                                 <h3 className="List-items-item-title__header">{item.title}</h3>
                                                 <Button
                                                     sx={{color: '#BE64FF'}}
-                                                    className="List-items-item-title__edit"
+                                                    className="List-items-item-title__rate"
                                                     onClick={handleClickSwitchActive}
-                                                    variant="text">EDIT</Button>
+                                                    variant="text">RATE</Button>
                                             </div>
                                             <div className="List-items-item__rating">
                                                 <Rating
@@ -52,13 +52,14 @@ export function Print() {
                                                     onChange={handleRatingChange}
                                                 />
                                             </div>
-                                            <p className="List-items-item__webLink">{item.author}</p>
+                                            <p className="List-items-item__author">{item.author}</p>
                                             <a href={item.webLink}
                                                className="List-items-item__webLink">Link!</a>
-                                            <div><
-                                                img className="List-items-item__imgLink" src={item.imgLink} alt=""/>
+                                            <div className="List-items-item__footer">
+                                                <img className="List-items-item__footer__img"
+                                                     src={item.imgLink} alt=""/>
+                                                <DeleteItem index={idx} title={item.title} listName={list[0]}/>
                                             </div>
-                                            <DeleteItem index={idx} title={item.title} listName={list[0]}/>
                                         </li>
                                     )
                                 })

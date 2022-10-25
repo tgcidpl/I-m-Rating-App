@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import {useNavigate} from 'react-router-dom'
 import Rating from '@mui/material/Rating';
-import '../../index.scss';
 
 export function AddList() {
     const [listName, setListName] = useState('')
@@ -29,38 +28,10 @@ export function AddList() {
             imgLink
         }]
 
-        const dataToSaveToLocalStorage  = Object.assign(dataFromStorage, newList)
+        const dataToSaveToLocalStorage = Object.assign(dataFromStorage, newList)
         localStorage.setItem('lists', JSON.stringify(dataToSaveToLocalStorage))
 
-        //below testing code
-
-        // const dataFromStorage = JSON.parse(localStorage.getItem('lists')) || []
-        // const newItem = {
-        //     listName: listName,
-        //     title: title,
-        //     rating: rating,
-        //     webLink: webLink,
-        //     imgLink: imgLink
-        // }
-        //
-        // const dataToSave = [...dataFromStorage, newItem]
-        // console.log(dataToSave)
-        // localStorage.setItem('lists', JSON.stringify(dataToSave))
-
-        //below original code interpolating list names as Keys METHOD A
-
-        // const newList = JSON.parse(localStorage.getItem(`${listName}`)) || []
-        // const newItem = {
-        //     title,
-        //     rating,
-        //     webLink,
-        //     imgLink
-        // }
-        // newList.push(newItem)
-        // localStorage.setItem(`${listName}`, JSON.stringify(newList));
-
         navigate('/')
-
     }
 
     return (
@@ -89,10 +60,10 @@ export function AddList() {
                                 }}/>
                             <label>Your Initial Rating</label>
                             <div>
-                            <Rating value={rating}
-                                    onChange={(event, newValue) => {
-                                        setRating(newValue)}}
-                                        max={10}/>
+                                <Rating value={rating}
+                                        onChange={(event, newValue) => {
+                                            setRating(newValue)
+                                        }} max={10}/>
                             </div>
                             <label>Author/ band/ creator</label>
                             <input
@@ -102,7 +73,7 @@ export function AddList() {
                                 onChange={(e) => {
                                     setAuthor(e.target.value);
                                 }}/>
-                                <label>External Webpage Link</label>
+                            <label>External Webpage Link</label>
                             <input
                                 className="smallTile textField"
                                 type="link"

@@ -1,7 +1,6 @@
 import React from 'react';
 import DeleteIcon from '@mui/icons-material/Delete';
 
-
 export function DeleteItem(props) {
 
     function handleClickDeleteItem() {
@@ -23,12 +22,7 @@ export function DeleteItem(props) {
         }
     }
 
-    //below idea with target
-    // function handleClickDeleteItem(e) {console.log(e.target.parentNode.parentNode.removeChild)
-    //
-    // }
-
     return (
-        <DeleteIcon className="btn" onClick={handleClickDeleteItem}/>
+        <DeleteIcon className="btn deleteBtn" onClick={handleClickDeleteItem}/>
     )
 }

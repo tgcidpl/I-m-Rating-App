@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import Rating from '@mui/material/Rating';
-import '../../index.scss';
 
 //BELOW CODE BASED ON AddList modified for adding items to existing lists
 
@@ -28,7 +27,7 @@ export function AddItem(props) {
         }
 
         listFromStorage.push(newItem)
-        listFromStorage.sort((a,b) => (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0))
+        listFromStorage.sort((a, b) => (a.rating < b.rating) ? 1 : ((b.rating < a.rating) ? -1 : 0))
         localStorage.setItem('lists', JSON.stringify(dataFromStorage))
 
         location.reload()

@@ -4,7 +4,6 @@ import { Home } from '../../pages/Home';
 import { Layout } from '../Layout';
 import { Create } from '../../pages/Create'
 import { AboutUs } from '../../pages/AboutUs'
-import '../../index.scss';
 
 export function App() {
     return (
