@@ -16,6 +16,6 @@ export function DeleteList(props) {
     }
 
     return (
-        <button className="btn smallTile" onClick={handleClickDeleteList}>Delete List</button>
+        <button className="btn smallTile"  onClick={handleClickDeleteList}>Delete List</button>
     )
 }

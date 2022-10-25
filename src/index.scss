@@ -14,6 +14,7 @@ body {
 }
 
 .largeTile {
+  scroll-snap-align: start;
   display: block;
   background-color: $primaryColor;
   border-radius: 10px;
@@ -44,7 +45,7 @@ body {
 }
 
 .btn {
-  max-width:40vw;
+  max-width: 40vw;
   min-width: 20px;
   cursor: pointer;
   overflow: visible;
@@ -55,10 +56,11 @@ body {
   }
 }
 
-.active{
+.active {
   //  there was 60vh previously, works better without set data
 }
-.inactive{
+
+.inactive {
   height: 9vh;
 }
 
@@ -69,6 +71,7 @@ body {
   max-width: 40vw;
   overflow: visible;
 }
+
 .PageHeader {
   display: flex;
   justify-content: space-between;
@@ -108,10 +111,12 @@ body {
 .PrintArea {
   display: flex;
   overflow-x: scroll;
+  scroll-snap-type: x mandatory
 }
 
 .List {
   width: 90vw;
+
   &-header {
     font-size: 2.5rem;
     text-shadow: $shadowColor 3px 3px 3px;
@@ -124,9 +129,11 @@ body {
       background-size: cover;
       font-size: 2rem;
       padding: 0.5rem;
+
       &-title {
         display: flex;
         justify-content: space-between;
+
         &__header {
           margin-bottom: 0.5rem;
           font-weight: 700;
@@ -136,24 +143,29 @@ body {
       &__rating {
         margin-bottom: 1rem;
       }
+
       &__author {
         padding: 0 0.5rem;
         margin-bottom: 1rem;
       }
+
       &__webLink {
         padding: 0 0.5rem;
         text-decoration: none;
         margin-bottom: 1rem;
         color: $primaryColor;
+
         &:hover {
           background-color: $primaryColor;
           color: $secondaryColor;
           border-radius: 5px;
         }
       }
-      &__footer{
-      display: flex;
+
+      &__footer {
+        display: flex;
         justify-content: space-between;
+
         &__img {
           margin-top: 1rem;
           max-width: 30vw;
@@ -169,10 +181,19 @@ body {
   background-color: $secondaryColor;
   border-radius: 5px;
   align-self: flex-end;
+
   &:hover {
     background-color: $primaryColor;
     color: $secondaryColor;
     border-radius: 5px;
+  }
+}
+
+.aboutUsText {
+  padding: 1rem;
+
+  > p {
+    margin-bottom: 2rem;
   }
 }
 
