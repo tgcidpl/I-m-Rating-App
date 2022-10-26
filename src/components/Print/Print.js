@@ -11,8 +11,6 @@ console.log(supabase)
     const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
     const [active, setActive] = useState(false)
 
-    const handleClickSwitchActive = () => setActive(!active)
-
     function handleRatingChange(e) {
         const dataFromStorage = JSON.parse(localStorage.getItem("lists")) || {}
         const title = e.target.parentNode.parentNode.parentNode.firstElementChild.firstElementChild.innerText
@@ -35,15 +33,17 @@ console.log(supabase)
                                 {list[1].map((item, idx) => {
                                     return (
                                         <li key={idx}
-                                            className={`smallTile List-items-item 
-                                            ${active ? 'active' : 'inactive'}`}
+                                            className={`smallTile List-items-item inactive`}
                                             style={{backgroundImage: `url(${item.imgLink})`}}>
                                             <div className="List-items-item-title">
                                                 <h3 className="List-items-item-title__header">{item.title}</h3>
                                                 <Button
                                                     sx={{color: '#BE64FF'}}
                                                     className="List-items-item-title__rate"
-                                                    onClick={handleClickSwitchActive}
+                                                    onClick={(e) => {
+                                                        e.target.parentNode.parentElement.classList.toggle
+                                                        ( 'inactive'); setActive(!active)
+                                                    }}
                                                     variant="text">RATE</Button>
                                             </div>
                                             <div className="List-items-item__rating">
