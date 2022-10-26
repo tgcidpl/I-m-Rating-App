@@ -4,10 +4,8 @@ import Rating from '@mui/material/Rating';
 import {AddItem} from '../AddItem/'
 import {DeleteItem} from "../DeleteItem";
 import {DeleteList} from "../DeleteList";
-import supabase from '../../config/supabaseClient'
 
 export function Print() {
-console.log(supabase)
     const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
     const [active, setActive] = useState(false)
 
