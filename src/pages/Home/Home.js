@@ -4,8 +4,14 @@ import {Print} from '../../components/Print'
 import {PageHeader} from "../../components/PageHeader";
 
 export function Home() {
-    if (localStorage.length === 0) {
-        return <Link className="Menu-list__link largeTile" to="/create">Create your first list!</Link>
+
+    if (localStorage.length === 1) {
+        return (
+            <>
+                <PageHeader/>
+                <Link className="Menu-list__link largeTile" to="/create">Create your first list!</Link>
+            </>
+        )
     }
     return (
         <>
