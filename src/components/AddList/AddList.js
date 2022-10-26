@@ -31,7 +31,7 @@ export function AddList() {
         const dataToSaveToLocalStorage = Object.assign(dataFromStorage, newList)
         localStorage.setItem('lists', JSON.stringify(dataToSaveToLocalStorage))
 
-        navigate('/')
+        navigate('/home')
     }
 
     return (

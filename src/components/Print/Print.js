@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Button from '@mui/material/Button';
-import {AddItem} from '../AddItem/'
 import Rating from '@mui/material/Rating';
+import {AddItem} from '../AddItem/'
 import {DeleteItem} from "../DeleteItem";
 import {DeleteList} from "../DeleteList";
 import supabase from '../../config/supabaseClient'

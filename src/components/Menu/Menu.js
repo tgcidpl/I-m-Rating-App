@@ -23,12 +23,11 @@ export function Menu() {
     const list = (anchor) => (
         <Box
             sx={{width: 250}}
-            // role="presentation"
             onClick={toggleDrawer(anchor, false)}
             onKeyDown={toggleDrawer(anchor, false)}
         >
             <List className="Menu-list">
-                <Link className="Menu-list__link smallTile Menu__button" to="/">Home</Link>
+                <Link className="Menu-list__link smallTile Menu__button" to="/home">Home</Link>
                 <Link className="Menu-list__link smallTile Menu__button" to="/create">Create New List</Link>
                 <Link className="Menu-list__link smallTile Menu__button" to="/aboutUs">About Us</Link>
             </List>
