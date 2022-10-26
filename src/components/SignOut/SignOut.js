@@ -19,7 +19,7 @@ export function SignOut() {
     return (
         <button
             type="button"
-            className="smallTile Menu__button"
+            className="smallTile Menu__button signOutBtn"
             onClick={handleClickSignOut}
         >
             Sign Out

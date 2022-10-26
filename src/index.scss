@@ -30,7 +30,6 @@ body {
   box-shadow: 5px 5px 5px $shadowColor;
   @media (min-width: 440px) {
     min-width: 400px;
-
   }
 }
 
@@ -60,8 +59,12 @@ body {
 .inactive {
   height: 9vh;
 }
-
-
+//below beta styling code for darkening items when rating Print - RATE button toggle
+.shadowed {
+  outline: 1000px solid #000000b0;
+  z-index: 3
+}
+//end of beta code
 .Logo {
   font-size: 1.5rem;
   min-width: 20px;
@@ -135,6 +138,15 @@ body {
           margin-bottom: 0.5rem;
           font-weight: 700;
         }
+        &__rate {
+          font-size: 1rem;
+          text-decoration: none;
+          border: none;
+          border-radius: 10px;
+          height: 2rem;
+          color: $primaryColor;
+          font-weight: 700;
+        }
       }
 
       &__rating {
@@ -188,14 +200,14 @@ body {
 
 .aboutUsText {
   padding: 1rem;
-
+  max-width: 400px;
   > p {
     margin-bottom: 2rem;
   }
 }
 
 
-.auth{
+.Auth{
   margin-top: 20vh;
   text-align: center;
   display: flex;
@@ -220,5 +232,9 @@ flex-direction: column;
   }
 }
 
-
+.signOutBtn {
+  width: 40vw;
+  margin-top: 5rem;
+  border: none;
+}
 

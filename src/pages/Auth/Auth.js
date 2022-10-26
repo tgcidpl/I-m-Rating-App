@@ -10,7 +10,7 @@ export function Auth() {
 
     async function signUp(email, password) {
         try{
-            const {data, error} = await supabase.auth.signUp({email, password})
+            const {error} = await supabase.auth.signUp({email, password})
             if (error) throw error
             alert(`Account created!`)
             navigate('/home')
@@ -24,7 +24,7 @@ export function Auth() {
 
     async function login(email, password) {
         try{
-            const {data, error} = await supabase.auth.signInWithPassword({email, password})
+            const {error} = await supabase.auth.signInWithPassword({email, password})
             if (error) throw error
             alert(`User logged in, happy rating!`)
             navigate('/home')
@@ -37,19 +37,20 @@ export function Auth() {
     }
 
     return (
-        <div className="largeTile auth">
-            <h1 className="auth-header">Welcome to I'm Rating App!</h1>
-            <div className="auth-inputs">
-                <input className="auth-inputs__input"
+        <div className="largeTile Auth">
+            <h2 className="Auth-header">&#9733; I'm Rating &#9733;</h2>
+            <h2 className="Auth-header">Welcome!</h2>
+            <div className="Auth-inputs">
+                <input className="Auth-inputs__input"
                        placeholder="email" type="email" onChange={(e) => setEmail(e.target.value)} />
-                <input className="auth-inputs__input"
+                <input className="Auth-inputs__input"
                        placeholder="password" type="password" onChange={(e) => setPassword(e.target.value)}/>
             </div>
-            <div className="auth-buttons">
-                <button className="smallTile auth-buttons__button"
+            <div className="Auth-buttons">
+                <button className="smallTile Auth-buttons__button"
                         onClick={(e)=>{e.preventDefault();
                             signUp(email, password)}}>Sign Up</button>
-                <button className="smallTile auth-buttons__button"
+                <button className="smallTile Auth-buttons__button"
                         onClick={(e)=>{e.preventDefault();
                             login(email, password)}}>Login</button>
             </div>
