@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from 'react-router-dom';
+import {SignOut} from "../SignOut/"
 
 //below drawer core was taken from mui,
 // originally designed for 4 directions top left right bottom and .map for creating buttons
@@ -30,6 +31,7 @@ export function Menu() {
                 <Link className="Menu-list__link smallTile Menu__button" to="/home">Home</Link>
                 <Link className="Menu-list__link smallTile Menu__button" to="/create">Create New List</Link>
                 <Link className="Menu-list__link smallTile Menu__button" to="/aboutUs">About Us</Link>
+                <SignOut />
             </List>
         </Box>
     );

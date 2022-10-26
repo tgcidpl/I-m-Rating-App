@@ -1,8 +1,11 @@
 import React from 'react';
+import {PageHeader} from "../../components/PageHeader";
 
 export function AboutUs (){
+
     return (
         <>
+            <PageHeader/>
         <div className="largeTile">
             About Us
         </div>
