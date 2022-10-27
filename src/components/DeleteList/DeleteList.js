@@ -9,7 +9,6 @@ export function DeleteList(props) {
             const dataFromStorage = JSON.parse(localStorage.getItem("lists")) || {}
             delete dataFromStorage[props.listName]
 
-            console.log('dataFromStorage', dataFromStorage)
             localStorage.setItem('lists', JSON.stringify(dataFromStorage))
             location.reload()
         }

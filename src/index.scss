@@ -156,6 +156,8 @@ body {
       &__author {
         padding: 0 0.5rem;
         margin-bottom: 1rem;
+        overflow-wrap: break-word;
+        hyphens: manual;
       }
 
       &__webLink {

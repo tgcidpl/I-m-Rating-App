@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Rating from '@mui/material/Rating';
 
-//BELOW CODE BASED ON AddList modified for adding items to existing lists
+//below code based on AddList modified for adding items to existing lists
 
 export function AddItem(props) {
     const [title, setTitle] = useState('')
@@ -10,7 +10,6 @@ export function AddItem(props) {
     const [webLink, setWebLink] = useState('')
     const [imgLink, setImgLink] = useState('')
     const [active, setActive] = useState(false)
-
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -33,12 +32,9 @@ export function AddItem(props) {
         location.reload()
     }
 
-
     function handleClickSwitchActive() {
         setActive(!active)
     }
-
-    // JAK STARCZY CZASU TO TRZEBA ZROBIC PORZADEK Z KLASAMI smallTile i button osobno
 
     return (
         <div>

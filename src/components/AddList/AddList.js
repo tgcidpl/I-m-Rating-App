@@ -15,7 +15,7 @@ export function AddList() {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        //below working code with Object.entries printing. Issue was [] instead of {} as base dataFromStorage
+        //below working code with Object.entries printing. Initial issue was [] instead of {} as base dataFromStorage
         //below now works with Object.assign instead of deconstruction of []
 
         const dataFromStorage = JSON.parse(localStorage.getItem(`lists`)) || {}
@@ -53,7 +53,6 @@ export function AddList() {
                             <input
                                 className="smallTile textField"
                                 type="text"
-                                required
                                 value={title}
                                 onChange={(e) => {
                                     setTitle(e.target.value);
@@ -65,7 +64,7 @@ export function AddList() {
                                             setRating(newValue)
                                         }} max={10}/>
                             </div>
-                            <label>Author/ band/ creator</label>
+                            <label>Author/ band/ creator/ notes</label>
                             <input
                                 className="smallTile textField"
                                 type="text"

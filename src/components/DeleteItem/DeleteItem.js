@@ -14,7 +14,7 @@ export function DeleteItem(props) {
             //filter below should splice not work
             // const filteredList = listFromStorage.filter(el=>el.title !== props.title)
 
-            //below code for deleting items by index, works only if lists are printing already sorted
+            //below code for deleting items by index, works only if printed lists are already sorted
             listFromStorage.splice(props.index, 1)
 
             localStorage.setItem('lists', JSON.stringify(dataFromStorage))
