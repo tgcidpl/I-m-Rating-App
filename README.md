@@ -12,13 +12,18 @@ Technologies:
 REACT
 SCSS
 Supabase
-
-Plugins:
+Babel
 Webpack
 Dotenv
 
 External libraries:
 MUI
 
-Terminal: npm install -> npm start
+Terminal:
+npm install -> npm start
+
+Test account to try out:
+email: someone@email.com
+password: TWqhHORyyGiCbpOrahOF
+
 
