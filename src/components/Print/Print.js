@@ -3,7 +3,6 @@ import Rating from '@mui/material/Rating';
 import {AddItem} from '../AddItem/'
 import {DeleteItem} from "../DeleteItem";
 import {DeleteList} from "../DeleteList";
-import {Link} from "react-router-dom";
 
 export function Print() {
     const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
@@ -21,9 +20,6 @@ export function Print() {
         location.reload()
     }
 
-    if (Object.keys(dataFromStorageToPrint).length === 0) {
-        return <Link className="Menu-list__link largeTile" to="/create">Create your first list!</Link>
-    }
     return (
             <div className="PrintArea">
 

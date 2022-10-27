@@ -13,6 +13,15 @@ export function Home() {
             </>
         )
     }
+    const dataFromStorageToPrint = JSON.parse(localStorage.getItem("lists"))
+    if (Object.keys(dataFromStorageToPrint).length === 0) {
+        return (
+            <>
+                <PageHeader/>
+                <Link className="Menu-list__link largeTile" to="/create">Create your first list!</Link>
+            </>
+        )
+    }
     return (
         <>
             <PageHeader/>
