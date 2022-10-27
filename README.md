@@ -20,5 +20,5 @@ Dotenv
 External libraries:
 MUI
 
-
+Terminal: npm install -> npm start
 
